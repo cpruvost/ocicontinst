@@ -64,7 +64,6 @@ variable "ci_image_url" {
 variable "ci_count" {
     description = "The OCI Container Instance Count Number"
     type        = number
-    default     = 1
 }
 
 variable "ci_registry_secret" {

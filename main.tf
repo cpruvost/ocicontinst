@@ -15,7 +15,6 @@ module "containerinstance" {
 
   compartment_ocid  = var.compartment_ocid
   private_subnet_ocid = var.private_subnet_ocid
-  availability_domain = var.availability_domain
   ci_name = var.ci_name
   ci_restart_policy = var.ci_restart_policy
   ci_state = var.ci_state
