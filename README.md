@@ -51,3 +51,4 @@ What is nice is that each time you autoscale then you have a log report in Oracl
 
 You may find these two components in another github report that is in construction for the moment.
 
+Note : After running the Stack wait a little time to access to your backends using the Load Balancer. If you do not wait a little time you will have a "Bad Gateway" Message.
