@@ -39,10 +39,11 @@ variable "public_subnet_ocid" {
     type        = string
 }
 
-variable "availability_domain" {
-    description = "The OCI Availability Domain"
-    type        = string
-}
+# Use data to get ADs is better.
+# variable "availability_domain" {
+#     description = "The OCI Availability Domain"
+#     type        = string
+# }
 
 variable "ci_name" {
     description = "The OCI Container Instance Name"
@@ -99,7 +100,6 @@ variable "ci_registry_secret" {
 variable "ci_count" {
     description = "The OCI Container Instance Count Number"
     type        = number
-    default     = 1
 }
 
 variable "load_balancer_shape_details_maximum_bandwidth_in_mbps" {

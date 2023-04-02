@@ -8,10 +8,11 @@ variable "private_subnet_ocid" {
     type        = string
 }
 
-variable "availability_domain" {
-    description = "The OCI Availability Domain"
-    type        = string
-}
+#Use data to get ADs is better.
+# variable "availability_domain" {
+#     description = "The OCI Availability Domain"
+#     type        = string
+# }
 
 variable "ci_name" {
     description = "The OCI Container Instance Name"
@@ -71,11 +72,17 @@ variable "ci_registry_secret" {
     type        = string
 }
 
+#Get Availaibility Domains. We use only first AD. 
+#TODO Later (Add logic for multi Ads Domain)
+data "oci_identity_availability_domains" "ADs" {
+  compartment_id = "${var.compartment_ocid}"
+}
+
 resource "oci_container_instances_container_instance" "this" {
   count = var.ci_count
   compartment_id           = var.compartment_ocid
   display_name             = var.ci_name
-  availability_domain      = var.availability_domain
+  availability_domain      = "${lookup(data.oci_identity_availability_domains.ADs.availability_domains[0], "name")}"
   container_restart_policy = var.ci_restart_policy
   state                    = var.ci_state
   shape                    = var.ci_shape

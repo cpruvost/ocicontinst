@@ -35,7 +35,6 @@ You can look at the variables and see :
   - region
   - private_subnet_ocid
   - public_subnet_ocid
-  - availability_domain (You can use OCLI CLI to get it : oci iam availability-domain list --profile EMEAFRANC)
   - ci_image_url
   - ci_registry_secret (ocid)
 
@@ -43,9 +42,9 @@ You can look at the variables and see :
 
 Very simple just use this variable : ci_count (= number of container instances)
 
-For autoscaling we need to use two components : 
+For autoscaling we need to use two other components : 
 
-- an OCI Alarm that will for ex trigger a notification when the average cpu of the Container Instances are > value
+- an OCI Alarm that will for ex trigger a notification when the average cpu of the Container Instances are > value or < value
 - a function that will run due to the notification and that will use OCI SDK to update the variable ci_count to autoscale up and down.
 
 What is nice is that each time you autoscale then you have a log report in Oracle OCI Stacks Resource Manager and so the monitoring is simple !!!
