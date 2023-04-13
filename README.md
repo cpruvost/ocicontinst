@@ -49,6 +49,8 @@ For autoscaling we need to use two other components :
 
 What is nice is that each time you autoscale then you have a log report in Oracle OCI Stacks Resource Manager and so the monitoring is simple !!!
 
-You may find these two components in another github report that is in construction for the moment.
+You will find these two components in 2 another github repo : 
+ - [Function Repo](https://github.com/karthicgit/ocifunctions-sample/tree/main/CIautoscale)
+ - [Alarm Repo](https://github.com/karthicgit/Terraformoci/tree/main/NotificationAlarm)
 
-Note : After running the Stack wait a little time to access to your backends using the Load Balancer. If you do not wait a little time you will have a "Bad Gateway" Message.
+Note : After running the Stack wait a little time to access to your backends using the Load Balancer. If you do not wait a little time you will have a "Bad Gateway" Message. This little time is needed by the LoadBalancer to validate Backends.
