@@ -25,6 +25,7 @@ module "containerinstance" {
   ci_image_url = var.ci_image_url
   ci_registry_secret = var.ci_registry_secret
   ci_count = var.ci_count
+  is_public_ip_assigned = var.is_public_ip_assigned
 }
 
 module "loadbalancer" {

@@ -71,6 +71,11 @@ variable "ci_registry_secret" {
     type        = string
 }
 
+variable "is_public_ip_assigned" {
+    description = "Does the CI has a public ip ?"
+    type        = bool
+}
+
 #Get Availaibility Domains. We use only first AD. 
 #TODO Later (Add logic for multi Ads Domain)
 data "oci_identity_availability_domains" "ADs" {
@@ -94,7 +99,7 @@ resource "oci_container_instances_container_instance" "this" {
     hostname_label         = "hostname${count.index}"
     subnet_id              = var.private_subnet_ocid
     skip_source_dest_check = false
-    is_public_ip_assigned  = false
+    is_public_ip_assigned  = var.is_public_ip_assigned
   }
   containers {
     display_name          = "${var.ci_container_name}${count.index}"

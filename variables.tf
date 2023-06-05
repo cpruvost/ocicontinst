@@ -150,3 +150,8 @@ variable "lb_backend_port" {
     default     = 8000
 }
 
+variable "is_public_ip_assigned" {
+    description = "Does the CI has a public ip ?"
+    type        = bool
+}
+
