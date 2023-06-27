@@ -153,5 +153,6 @@ variable "lb_backend_port" {
 variable "is_public_ip_assigned" {
     description = "Does the CI has a public ip ?"
     type        = bool
+    default     = false
 }
 

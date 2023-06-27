@@ -104,7 +104,6 @@ resource "oci_container_instances_container_instance" "this" {
   containers {
     display_name          = "${var.ci_container_name}${count.index}"
     image_url             = var.ci_image_url
-    //image_url             = "fra.ocir.io/frsxwtjslf35/queuemonitor:0.0.3-SNAPSHOT"
   }
 
   image_pull_secrets {
