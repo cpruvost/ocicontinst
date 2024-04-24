@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     oci = {
-      version = "~> 4.112.0"
+      version = "~> 5.35.0"
     }
   }
 
